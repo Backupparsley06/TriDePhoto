@@ -12,15 +12,18 @@ namespace TriDePhoto
 {
     public partial class TriDePhoto : Form
     {
+
+        PictureLoader pictureLoader;
         public TriDePhoto()
         {
             InitializeComponent();
+            pictureLoader = new PictureLoader();
 
         }
 
         private void BTN_LoadPhoto_Click(object sender, EventArgs e)
         {
-
+            pictureLoader.LoadAllPictureID();
         }
     }
 }
