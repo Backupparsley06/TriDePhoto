@@ -12,9 +12,10 @@ namespace TriDePhoto
     {
         private DirectoryInfo directory;
         FileInfo[] fileInfos;
-        public PictureLoader()
+        string relativePath;
+        public PictureLoader(string relativePath)
         {
-
+            this.relativePath = relativePath;
         }
 
         public void LoadAllPictureID()
@@ -30,19 +31,9 @@ namespace TriDePhoto
             return (Bitmap)((new ImageConverter()).ConvertFrom(bytes));
         }
 
-        private Image byteArrayToImage(byte[] byteArrayIn)
+        public string GetImageNameByID(int id)
         {
-            Image returnImage = null;
-            try
-            {
-                MemoryStream ms = new MemoryStream(byteArrayIn, 0, byteArrayIn.Length);
-                ms.Write(byteArrayIn, 0, byteArrayIn.Length);
-                returnImage = Image.FromStream(ms, true);//Exception occurs here
-            }
-            catch {
-                int i = 0;
-            }
-            return returnImage;
+            return fileInfos[id].Name;
         }
     }
 }
