@@ -12,6 +12,7 @@ namespace TriDePhoto
 {
     public partial class TriDePhoto : Form
     {
+
         PictureLoader pictureLoader;
         public TriDePhoto()
         {
