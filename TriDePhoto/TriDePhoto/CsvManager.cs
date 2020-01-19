@@ -40,10 +40,16 @@ namespace TriDePhoto
             {
                 pullFile();     
             }
-            Stream stream = dataFile.OpenWrite();
-            streamWrite = new StreamWriter(stream);
+
+            OpenWriter();
             pushFile();
   
+        }
+
+        private void OpenWriter()
+        {
+            Stream stream = dataFile.OpenWrite();
+            streamWrite = new StreamWriter(stream);
         }
 
         private void pushFile()
@@ -56,6 +62,7 @@ namespace TriDePhoto
             {
                 streamWrite.Write("");
             }
+            streamWrite.Flush();
         }
 
         private void pullFile()
@@ -69,6 +76,15 @@ namespace TriDePhoto
                         data.RemoveAt(0);
                     }
                 }
+        }
+
+        public void Back()
+        {
+            streamWrite.Close();
+            data.RemoveAt(data.Count - 1);
+            dataFile.Delete();
+            OpenWriter();
+            pushFile();
         }
 
         public void AddData(string Image, int categorie)
