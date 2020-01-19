@@ -12,10 +12,9 @@ namespace TriDePhoto
     {
         private DirectoryInfo directory;
         FileInfo[] fileInfos;
-        string relativePath;
         public PictureLoader(string relativePath)
         {
-            this.relativePath = relativePath;
+            LoadAllPictureID(relativePath);
         }
 
         public int PictureCount
@@ -26,17 +25,15 @@ namespace TriDePhoto
             }
         }
 
-        public void LoadAllPictureID()
+        public void LoadAllPictureID(string relativePath)
         {
-            string currentDir = Environment.CurrentDirectory + "\\..\\..\\..\\..\\Photo\\";
-            directory = new DirectoryInfo(currentDir);
+            directory = new DirectoryInfo(Environment.CurrentDirectory + relativePath);
             fileInfos = directory.GetFiles();
         }
 
         public Image LoadImageById(int id)
         {
-            byte [] bytes = File.ReadAllBytes(fileInfos[id].FullName);
-            return (Bitmap)((new ImageConverter()).ConvertFrom(bytes));
+            return (Bitmap)((new ImageConverter()).ConvertFrom(File.ReadAllBytes(fileInfos[id].FullName)));
         }
 
         public string GetImageNameByID(int id)
