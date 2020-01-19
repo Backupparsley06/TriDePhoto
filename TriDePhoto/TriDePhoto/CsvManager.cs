@@ -78,13 +78,18 @@ namespace TriDePhoto
                 }
         }
 
-        public void Back()
+        public void Back(int count)
         {
             streamWrite.Close();
-            data.RemoveAt(data.Count - 1);
+            for (int i = 0; i < count && data.Count > 0; i++)
+                data.RemoveAt(data.Count - 1);        
             dataFile.Delete();
             OpenWriter();
             pushFile();
+        }
+        public void Back()
+        {
+            Back(1);
         }
 
         public void AddData(string Image, int categorie)

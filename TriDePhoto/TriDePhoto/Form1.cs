@@ -14,17 +14,25 @@ namespace TriDePhoto
     {
         const string relativePathPhoto = "\\..\\..\\..\\..\\Photo\\";
         const string relativePathCsv = "\\..\\..\\..\\..\\Out\\";
-        PictureLoader pictureLoader;
-        CsvManager csvManager;
+        const string relativePathTester = "\\..\\..\\..\\..\\Test\\";
+        const string testFileName = "Tests.data";
+        const string testProbability = "1/10";
+        const int penalty = 10;
+        private bool isTest = false;
+        private PictureLoader pictureLoader;
+        private CsvManager csvManager;
+        private ProbabilityGenerator probabilityGenerator;
+        private Tester tester;
         public TriDePhoto()
         {
             InitializeComponent();
             InitPictureBox();
 
+            probabilityGenerator = new ProbabilityGenerator(int.Parse(testProbability.Split('/')[0]), int.Parse(testProbability.Split('/')[1]));
             pictureLoader = new PictureLoader(relativePathPhoto);
             csvManager = new CsvManager(relativePathCsv);
+            tester = new Tester(relativePathTester, testFileName);
             csvManager.LoadCsv();
-            pictureLoader.LoadAllPictureID();
             PB_affichageSac.Image = pictureLoader.LoadImageById(csvManager.LineCount);
             UpdateCounter();
             UpdateUI();
@@ -45,13 +53,37 @@ namespace TriDePhoto
         }
 
         public void NextPicture(int categorieValue)
-        {   
-            csvManager.AddData(pictureLoader.GetImageNameByID(csvManager.LineCount), categorieValue);
-            if (pictureLoader.PictureCount > csvManager.LineCount)
+        {
+            if (isTest)
             {
-                PB_affichageSac.Image = pictureLoader.LoadImageById(csvManager.LineCount);
+                isTest = false;
+                if (categorieValue == tester.GetAnswer())
+                {
+                    //TO-DO
+                }
+                else
+                {
+                    //TO-DO
+                    csvManager.Back(penalty);
+                }
+            }
+            else
+            {
+                csvManager.AddData(pictureLoader.GetImageNameByID(csvManager.LineCount), categorieValue);
             }
 
+
+            if (pictureLoader.PictureCount > csvManager.LineCount)
+            {
+                if(isTest = probabilityGenerator.GetRandom())
+                {
+                    PB_affichageSac.Image = tester.LoadImage();
+                }
+                else
+                {
+                    PB_affichageSac.Image = pictureLoader.LoadImageById(csvManager.LineCount);
+                }
+            }
             UpdateCounter();
             UpdateUI();
         }
@@ -63,6 +95,7 @@ namespace TriDePhoto
             UpdateCounter();
             UpdateUI();
         }
+
         public void ToggleCategories(bool enabled)
         {
             BTN_Categorie1.Enabled = enabled;
@@ -89,8 +122,6 @@ namespace TriDePhoto
             BTN_Categorie22.Enabled = enabled;
             BTN_Categorie23.Enabled = enabled;
         }
-
-
         private void BTN_Categorie1_Click(object sender, EventArgs e)
         {
             NextPicture(1);
