@@ -25,10 +25,10 @@ namespace TriDePhoto
             }
         }
 
-        public void LoadAllPictureID(string relativePath)
+        private void LoadAllPictureID(string relativePath)
         {
             directory = new DirectoryInfo(Environment.CurrentDirectory + relativePath);
-            fileInfos = directory.GetFiles();
+            fileInfos = directory.GetFiles().ToList().OrderBy(_ => _.Name).ToArray();
         }
 
         public Image LoadImageById(int id)

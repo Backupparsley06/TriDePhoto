@@ -12,6 +12,7 @@ namespace TriDePhoto
 {
     public partial class TriDePhoto : Form
     {
+        const string relativePathPictogrammes = "\\..\\..\\..\\..\\Pictogrammes\\";
         const string relativePathPhoto = "\\..\\..\\..\\..\\Photo\\";
         const string relativePathCsv = "\\..\\..\\..\\..\\Out\\";
         const string relativePathTester = "\\..\\..\\..\\..\\Test\\";
@@ -20,6 +21,7 @@ namespace TriDePhoto
         const int penalty = 10;
         private bool isTest = false;
         private PictureLoader pictureLoader;
+        private Pictogrammes pictogrammes;
         private CsvManager csvManager;
         private ProbabilityGenerator probabilityGenerator;
         private Tester tester;
@@ -34,9 +36,44 @@ namespace TriDePhoto
             tester = new Tester(relativePathTester, testFileName);
             csvManager.LoadCsv();
             PB_affichageSac.Image = pictureLoader.LoadImageById(csvManager.LineCount);
+            InitPictogrammes();
             UpdateCounter();
             UpdateUI();
         }
+
+        private void InitPictogrammes()
+        {
+            pictogrammes = new Pictogrammes(relativePathPictogrammes);
+            PB_1.Image = pictogrammes.Get(1);
+            PB_2.Image = pictogrammes.Get(2);
+            PB_3.Image = pictogrammes.Get(3);
+            PB_4.Image = pictogrammes.Get(4);
+            PB_5.Image = pictogrammes.Get(5);
+            PB_6.Image = pictogrammes.Get(6);
+            PB_7.Image = pictogrammes.Get(7);
+            PB_8.Image = pictogrammes.Get(8);
+            PB_9.Image = pictogrammes.Get(9);
+            PB_10.Image = pictogrammes.Get(10);
+            PB_11.Image = pictogrammes.Get(11);
+            PB_12.Image = pictogrammes.Get(12);
+            PB_13.Image = pictogrammes.Get(13);
+            PB_14.Image = pictogrammes.Get(14);
+            PB_15.Image = pictogrammes.Get(15);
+            PB_16.Image = pictogrammes.Get(16);
+            PB_17.Image = pictogrammes.Get(17);
+            PB_18.Image = pictogrammes.Get(18);
+            PB_19.Image = pictogrammes.Get(19);
+            PB_20.Image = pictogrammes.Get(20);
+            PB_21.Image = pictogrammes.Get(21);
+            PB_22.Image = pictogrammes.Get(22);
+            PB_23.Image = pictogrammes.Get(23);
+        }
+        
+        private void UpdatePB_Hover(int i)
+        {
+            PB_OnHover.Image = pictogrammes.Get(i);
+        }
+
         private void UpdateUI()
         {
             BTN_Back.Enabled = csvManager.LineCount > 0;
@@ -216,5 +253,119 @@ namespace TriDePhoto
         }
 
 
+        private void BTN_Categorie1_MouseEnter(object sender, EventArgs e)
+        {
+            UpdatePB_Hover(1);
+        }
+
+        private void BTN_Categorie2_MouseEnter(object sender, EventArgs e)
+        {
+            UpdatePB_Hover(2);
+        }
+
+        private void BTN_Categorie3_MouseEnter(object sender, EventArgs e)
+        {
+            UpdatePB_Hover(3);
+        }
+
+        private void BTN_Categorie4_MouseEnter(object sender, EventArgs e)
+        {
+            UpdatePB_Hover(4);
+        }
+
+        private void BTN_Categorie5_MouseEnter(object sender, EventArgs e)
+        {
+            UpdatePB_Hover(5);
+        }
+
+        private void BTN_Categorie6_MouseEnter(object sender, EventArgs e)
+        {
+            UpdatePB_Hover(6);
+        }
+
+        private void BTN_Categorie7_MouseEnter(object sender, EventArgs e)
+        {
+            UpdatePB_Hover(7);
+        }
+
+        private void BTN_Categorie8_MouseEnter(object sender, EventArgs e)
+        {
+            UpdatePB_Hover(8);
+        }
+
+        private void BTN_Categorie9_MouseEnter(object sender, EventArgs e)
+        {
+            UpdatePB_Hover(9);
+        }
+
+        private void BTN_Categorie10_MouseEnter(object sender, EventArgs e)
+        {
+            UpdatePB_Hover(10);
+        }
+
+        private void BTN_Categorie11_MouseEnter(object sender, EventArgs e)
+        {
+            UpdatePB_Hover(11);
+        }
+
+        private void BTN_Categorie12_MouseEnter(object sender, EventArgs e)
+        {
+            UpdatePB_Hover(12);
+        }
+
+        private void BTN_Categorie13_MouseEnter(object sender, EventArgs e)
+        {
+            UpdatePB_Hover(13);
+        }
+
+        private void BTN_Categorie14_MouseEnter(object sender, EventArgs e)
+        {
+            UpdatePB_Hover(14);
+        }
+
+        private void BTN_Categorie15_MouseEnter(object sender, EventArgs e)
+        {
+            UpdatePB_Hover(15);
+        }
+
+        private void BTN_Categorie16_MouseEnter(object sender, EventArgs e)
+        {
+            UpdatePB_Hover(16);
+        }
+
+        private void BTN_Categorie17_MouseEnter(object sender, EventArgs e)
+        {
+            UpdatePB_Hover(17);
+        }
+
+        private void BTN_Categorie18_MouseEnter(object sender, EventArgs e)
+        {
+            UpdatePB_Hover(18);
+        }
+
+        private void BTN_Categorie19_MouseEnter(object sender, EventArgs e)
+        {
+            UpdatePB_Hover(19);
+        }
+
+        private void BTN_Categorie20_MouseEnter(object sender, EventArgs e)
+        {
+            UpdatePB_Hover(20);
+        }
+
+        private void BTN_Categorie21_MouseEnter(object sender, EventArgs e)
+        {
+            UpdatePB_Hover(21);
+        }
+
+        private void BTN_Categorie22_MouseEnter(object sender, EventArgs e)
+        {
+            UpdatePB_Hover(22);
+        }
+
+        private void BTN_Categorie23_MouseEnter(object sender, EventArgs e)
+        {
+            UpdatePB_Hover(23);
+        }
     }
 }
