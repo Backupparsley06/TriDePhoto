@@ -18,6 +18,14 @@ namespace TriDePhoto
             this.relativePath = relativePath;
         }
 
+        public int PictureCount
+        {
+            get
+            {
+                return fileInfos.Length;
+            }
+        }
+
         public void LoadAllPictureID()
         {
             string currentDir = Environment.CurrentDirectory + "\\..\\..\\..\\..\\Photo\\";
