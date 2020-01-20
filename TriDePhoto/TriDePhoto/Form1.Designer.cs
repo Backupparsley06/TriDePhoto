@@ -84,6 +84,7 @@
             this.PB_19 = new System.Windows.Forms.PictureBox();
             this.PB_20 = new System.Windows.Forms.PictureBox();
             this.PB_OnHover = new System.Windows.Forms.PictureBox();
+            this.LBL_TestSucces = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PB_affichageSac)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -435,11 +436,12 @@
             this.Lbl_Counter.AutoSize = true;
             this.Lbl_Counter.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_Counter.ForeColor = System.Drawing.Color.Black;
-            this.Lbl_Counter.Location = new System.Drawing.Point(3, 0);
+            this.Lbl_Counter.Location = new System.Drawing.Point(3, 52);
             this.Lbl_Counter.Name = "Lbl_Counter";
-            this.Lbl_Counter.Size = new System.Drawing.Size(160, 50);
+            this.Lbl_Counter.Size = new System.Drawing.Size(160, 52);
             this.Lbl_Counter.TabIndex = 25;
             this.Lbl_Counter.Text = "Counter";
+            this.Lbl_Counter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BTN_Back
             // 
@@ -447,9 +449,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.BTN_Back.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTN_Back.Location = new System.Drawing.Point(3, 53);
+            this.BTN_Back.Location = new System.Drawing.Point(3, 107);
             this.BTN_Back.Name = "BTN_Back";
-            this.BTN_Back.Size = new System.Drawing.Size(160, 44);
+            this.BTN_Back.Size = new System.Drawing.Size(160, 47);
             this.BTN_Back.TabIndex = 26;
             this.BTN_Back.Text = "Back";
             this.BTN_Back.UseVisualStyleBackColor = true;
@@ -491,15 +493,18 @@
             // 
             this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel4.ColumnCount = 1;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.BTN_Back, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.Lbl_Counter, 0, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(1234, 60);
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Controls.Add(this.BTN_Back, 0, 2);
+            this.tableLayoutPanel4.Controls.Add(this.Lbl_Counter, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.LBL_TestSucces, 0, 0);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(1234, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(166, 100);
+            this.tableLayoutPanel4.RowCount = 3;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(166, 157);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // tableLayoutPanel5
@@ -850,6 +855,18 @@
             this.PB_OnHover.TabIndex = 3;
             this.PB_OnHover.TabStop = false;
             // 
+            // LBL_TestSucces
+            // 
+            this.LBL_TestSucces.AutoSize = true;
+            this.LBL_TestSucces.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LBL_TestSucces.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold);
+            this.LBL_TestSucces.Location = new System.Drawing.Point(3, 0);
+            this.LBL_TestSucces.Name = "LBL_TestSucces";
+            this.LBL_TestSucces.Size = new System.Drawing.Size(160, 52);
+            this.LBL_TestSucces.TabIndex = 27;
+            this.LBL_TestSucces.Text = "TestRes";
+            this.LBL_TestSucces.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // TriDePhoto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -952,6 +969,7 @@
         private System.Windows.Forms.PictureBox PB_19;
         private System.Windows.Forms.PictureBox PB_20;
         private System.Windows.Forms.PictureBox PB_OnHover;
+        private System.Windows.Forms.Label LBL_TestSucces;
     }
 }
 

@@ -91,21 +91,28 @@ namespace TriDePhoto
 
         public void NextPicture(int categorieValue)
         {
+            
             if (isTest)
             {
                 isTest = false;
                 if (categorieValue == tester.GetAnswer())
                 {
                     //TO-DO
+                    LBL_TestSucces.Text = "Succes";
+                    LBL_TestSucces.BackColor = Color.Green;
                 }
                 else
                 {
                     //TO-DO
+                    LBL_TestSucces.Text = "Raté";
+                    LBL_TestSucces.BackColor = Color.Red;
                     csvManager.Back(penalty);
                 }
             }
             else
             {
+                LBL_TestSucces.Text = "";
+                LBL_TestSucces.BackColor = Color.Transparent;
                 csvManager.AddData(pictureLoader.GetImageNameByID(csvManager.LineCount), categorieValue);
             }
 
@@ -251,118 +258,94 @@ namespace TriDePhoto
         {
             NextPicture(13);
         }
-
-
         private void BTN_Categorie1_MouseEnter(object sender, EventArgs e)
         {
             UpdatePB_Hover(1);
         }
-
         private void BTN_Categorie2_MouseEnter(object sender, EventArgs e)
         {
             UpdatePB_Hover(2);
         }
-
         private void BTN_Categorie3_MouseEnter(object sender, EventArgs e)
         {
             UpdatePB_Hover(3);
         }
-
         private void BTN_Categorie4_MouseEnter(object sender, EventArgs e)
         {
             UpdatePB_Hover(4);
         }
-
         private void BTN_Categorie5_MouseEnter(object sender, EventArgs e)
         {
             UpdatePB_Hover(5);
         }
-
         private void BTN_Categorie6_MouseEnter(object sender, EventArgs e)
         {
             UpdatePB_Hover(6);
         }
-
         private void BTN_Categorie7_MouseEnter(object sender, EventArgs e)
         {
             UpdatePB_Hover(7);
         }
-
         private void BTN_Categorie8_MouseEnter(object sender, EventArgs e)
         {
             UpdatePB_Hover(8);
         }
-
         private void BTN_Categorie9_MouseEnter(object sender, EventArgs e)
         {
             UpdatePB_Hover(9);
         }
-
         private void BTN_Categorie10_MouseEnter(object sender, EventArgs e)
         {
             UpdatePB_Hover(10);
         }
-
         private void BTN_Categorie11_MouseEnter(object sender, EventArgs e)
         {
             UpdatePB_Hover(11);
         }
-
         private void BTN_Categorie12_MouseEnter(object sender, EventArgs e)
         {
             UpdatePB_Hover(12);
         }
-
         private void BTN_Categorie13_MouseEnter(object sender, EventArgs e)
         {
             UpdatePB_Hover(13);
         }
-
         private void BTN_Categorie14_MouseEnter(object sender, EventArgs e)
         {
             UpdatePB_Hover(14);
         }
-
         private void BTN_Categorie15_MouseEnter(object sender, EventArgs e)
         {
             UpdatePB_Hover(15);
         }
-
         private void BTN_Categorie16_MouseEnter(object sender, EventArgs e)
         {
             UpdatePB_Hover(16);
         }
-
         private void BTN_Categorie17_MouseEnter(object sender, EventArgs e)
         {
             UpdatePB_Hover(17);
         }
-
         private void BTN_Categorie18_MouseEnter(object sender, EventArgs e)
         {
             UpdatePB_Hover(18);
         }
-
         private void BTN_Categorie19_MouseEnter(object sender, EventArgs e)
         {
             UpdatePB_Hover(19);
         }
-
         private void BTN_Categorie20_MouseEnter(object sender, EventArgs e)
         {
             UpdatePB_Hover(20);
         }
-
         private void BTN_Categorie21_MouseEnter(object sender, EventArgs e)
         {
             UpdatePB_Hover(21);
         }
-
         private void BTN_Categorie22_MouseEnter(object sender, EventArgs e)
         {
             UpdatePB_Hover(22);
         }
-
         private void BTN_Categorie23_MouseEnter(object sender, EventArgs e)
         {
             UpdatePB_Hover(23);
